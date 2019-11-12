@@ -2,16 +2,34 @@
 
 function sorting(arrNumber) {
     // code di sini
-   
-    for (var i=0; i<arrNumber.length-1; i++) {
-        if (arrNumber[i] > arrNumber[i+1]) {
-            var sementara = arrNumber[i];
-            arrNumber[i] = arrNumber[i+1];
-            arrNumber[i+1] = sementara;
-        }
+
+    //pake for
+//     for (var i=0; i<arrNumber.length-1; i++) {
+//         if (arrNumber[i] > arrNumber[i+1]) {
+//             var sementara = arrNumber[i];
+//             arrNumber[i] = arrNumber[i+1];
+//             arrNumber[i+1] = sementara;
+//         }
+//     }
+//     return arrNumber;
+  
+
+    //pake do-while
+    var toggle = true;
+    do { toggle = false;
+        for(var i=0; i<arrNumber.length; i++) {
+            if (arrNumber[i] > arrNumber[i+1]) {
+                var sementara = arrNumber[i];
+                arrNumber[i] = arrNumber[i+1];
+                arrNumber[i+1] = sementara;
+                toggle = true;
+            }
+        } 
     }
+    while (toggle); 
+    // console.log(arrNumber [i]);
     return arrNumber;
-  }
+}
   
   function getTotal(arrNumber) {
     // code di sini
@@ -49,3 +67,5 @@ function sorting(arrNumber) {
   
   console.log(mostFrequentLargestNumbers([]));
   //''
+
+  console.log(sorting([2,5,4,1,3,6]));
